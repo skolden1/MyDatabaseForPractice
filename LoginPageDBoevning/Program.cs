@@ -1,6 +1,6 @@
 ﻿using LoginPageDBoevning;
 
-//var uM = new UserManager();
+var uM = new UserManager();
 //loggar in användaren, testar om det fungerade då jag skapade 2st användare genom sql tidigare.
 //Console.WriteLine("Ange ditt användarnamn: ");
 //string userName = Console.ReadLine();
@@ -30,4 +30,4 @@ string userInput = Console.ReadLine();
 
 Console.WriteLine("Välj ditt lösenord: ");  //Testa o Hasha detta senare
 string pwInput = Console.ReadLine();
-//uM.CreateUserAcc(userInput, pwInput);
+uM.CreateUserAcc(userInput, pwInput);

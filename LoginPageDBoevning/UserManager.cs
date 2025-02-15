@@ -8,25 +8,25 @@ namespace LoginPageDBoevning
 {
     public class UserManager
     {
-        private readonly AppDbContext _context;
-        public UserManager(AppDbContext context)
-        {
-            _context = context;
-        }
+        
 
         public void CreateUserAcc(string userName, string pw)
         {
-            
+            using (var context = new AppDbContext())
+            {
                 var newUser = new User
                 {
                     Username = userName,
                     PasswordHash = pw
                 };
 
-                _context.Users.Add(newUser);
+                context.Users.Add(newUser);
 
-                _context.SaveChanges();
+                context.SaveChanges();
                 Console.WriteLine($"{userName} registrerades i databasen.");
+            }
+            
+                
             
         }
     }
